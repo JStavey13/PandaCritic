@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+   <link rel="stylesheet" href="maps.css">
+    <title>Search for Tea</title>
+</head>
+  <body class="is-fullheight is-responsive has-background-warning-light">
+    <section>
+      <div>
+        <input type="text" placeholder="Enter your city" id="cities" class="has-text-success-dark input mb-2"></input>
+        <button id="searchCity" class="button is-success is-light is-fullwidth is-focused mb-3">Search...</button>
+        <div class="container is-responsive">
+        <div id="maps"></div>
+      </div>
+      </div>
+    </section>
+    <script src="./maps.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly"async></script>
+  </body>
+</html>
