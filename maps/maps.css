@@ -1,0 +1,9 @@
+body{
+  background-image: url("/image/photo-1532467411038-57680e3dc0f1.avif");
+  background-repeat: no-repeat;
+}
+#maps {
+    height: 400px;
+    width: 500px;
+    border-radius: 4px;
+  }
