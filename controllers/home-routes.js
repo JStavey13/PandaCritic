@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Food = require('../models/food');
+const Food = require('../models/Food');
 
 router.get('/', async (req, res) => {
     const foodData = await Food.findAll().catch((err) => { 
@@ -8,3 +8,9 @@ router.get('/', async (req, res) => {
         const foods = foodData.map((dish) => dish.get({ plain: true }));
         res.render('homepage', { foods });
       });
+
+
+
+
+
+module.exports = router

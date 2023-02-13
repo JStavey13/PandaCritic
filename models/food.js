@@ -43,4 +43,4 @@ Food.init(
 
 
 
-model.exports = Food
+module.exports = Food
