@@ -1,5 +1,3 @@
-// 
-
 let map;
 
 function getLocation(city) {
@@ -69,3 +67,4 @@ document.querySelector("#searchCity").addEventListener("click", (e) => {
   let city = document.getElementById("city").value;
   getLocation(city);
 });
+
