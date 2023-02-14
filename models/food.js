@@ -29,7 +29,16 @@ Food.init(
         food_rating: {
             type: DataTypes.INTEGER,
             allowNull: false,
-        }
+        },
+
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              // This references the `reader` model, which we set in `Reader.js` as its `modelName` property
+              model: 'user',
+              key: 'id',
+            },
+        },
 
     },
 
