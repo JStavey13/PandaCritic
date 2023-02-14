@@ -39,7 +39,7 @@ function googleMap(lat, long) {
 }
 
 const getTea = (lat, long) => {
-  let url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=tea&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
+  let url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=bar&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
 
   fetch(url, {
     method: "GET",

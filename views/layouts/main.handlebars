@@ -30,9 +30,13 @@
                   <a class="navbar-item is-active">
                     Home
                   </a>
-                  <a href="/login" class="navbar-item is-active">
-                    Login
-                  </a>
+                  <!-- Conditionally render login or logout links -->
+                  {{#if logged_in}}
+                  <a href="/food">Search Foods</a> |
+                  <button class="no-button" id="logout">Logout</button>
+                  {{else}}
+                  <a href="/login">Login</a>
+                  {{/if}}
                   <a class="navbar-item">
                     Explore
                   </a>
@@ -68,6 +72,9 @@
   
 
 {{{ body }}}
-
+ <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
