@@ -1,0 +1,25 @@
+<div class="hero-foot">
+          <nav class="tabs">
+            <div class="container">
+              <ul>
+                <li><a>Main Page</a></li>
+                <li><a>Restaurants</a></li>
+                <li><a>Boba Shops</a></li>
+                <li class="is-active"><a>Bars</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <section class="main">
+        <div class="column is-3">
+          <input type="text" placeholder="Enter your city" id="city" class="has-text-success-dark input mb-2"></input>
+          <button id="searchCity" class="button is-success is-light is-fullwidth is-focused mb-3">Search...</button>
+          <div class="container is-responsive">
+          <div id="maps"></div>
+        </div>
+        </div>
+      </section>
+      <div id="places-list"></div>
+    <script src="./js/barmap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly"async></script>

@@ -1,0 +1,15 @@
+.main{
+  background-image: url(/image/photo-1548081597-c3552b4e9853.avif);
+  background-repeat: no-repeat;
+
+}
+.hero{
+  background-color: #D9F5DC;
+  /* background-image: url(/image/photo-1501082924321-2822c32a913c.avif); */
+}
+
+#maps {
+    height: 400px;
+    width: 500px;
+    border-radius: 8px;
+  }
