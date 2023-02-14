@@ -6,23 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PandaCritic</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+
+   <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/maps.css">
+    
 </head>
-<body>
-    <section class="hero is-warning is-small">
+<body class="is-fullheight is-responsive has-background-warning-light">
+    <section class="hero is-success-light is-medium">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span>Favorite Foods</span>
+                  <span>Favorite boba</span>
+                  <span>Favorite drinks</span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <!-- Conditionally render login or logout links -->
+                  {{#if logged_in}}
+                  <a href="/food">Search Foods</a> |
+                  <button class="no-button" id="logout">Logout</button>
+                  {{else}}
+                  <a href="/login">Login</a>
+                  {{/if}}
+                  <a class="navbar-item">
+                    Explore
+                  </a>
+                  <a class="navbar-item">
+                    My reviews
+                  </a>
+                  <span class="navbar-item">
+                    <a href="https://github.com/JStavey13/PandaCritic" class="button is-primary is-inverted">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
       
-     
+        <!-- Hero content: will be in the middle -->
         <div class="hero-body">
           <div class="container has-text-centered">
+            
             <p class="title">
               PandaCritic
             </p>
+            <p class="subtitle">
+              My personal reviews in one place 😍
+            </p>
           </div>
         </div>
-      
-      </section>
   
 
 {{{ body }}}
-
+ <!-- Render script for logged in users only -->
+  {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
 </body>
 </html>
