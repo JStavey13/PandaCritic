@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+   <link rel="stylesheet" href="/maps/reset.css">
+    <link rel="stylesheet" href="/maps/maps.css">
+    <title>Search for Tea</title>
+</head>
+  <body class="is-fullheight is-responsive has-background-warning-light">
+    <section class="hero is-success-light is-medium">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+          <nav class="navbar">
+            <div class="container">
+              <div class="navbar-brand">
+                <span class="navbar-burger" data-target="navbarMenuHeroA">
+                  <span>Favorite Foods</span>
+                  <span>Favorite boba</span>
+                  <span>Favorite drinks</span>
+                </span>
+              </div>
+              <div id="navbarMenuHeroA" class="navbar-menu">
+                <div class="navbar-end">
+                  <a class="navbar-item is-active">
+                    Home
+                  </a>
+                  <a class="navbar-item">
+                    Explore
+                  </a>
+                  <a class="navbar-item">
+                    My reviews
+                  </a>
+                  <span class="navbar-item">
+                    <a href="https://github.com/JStavey13/PandaCritic" class="button is-primary is-inverted">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Download</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            
+            <p class="title">
+              PandaCritic
+            </p>
+            <p class="subtitle">
+              My personal reviews in one place 😍
+            </p>
+          </div>
+        </div>
+      
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+          <nav class="tabs">
+            <div class="container">
+              <ul>
+                <li><a > Main Page</a></li>
+                <li class="is-active"><a>Restaurants</a></li>
+                <li><a>Boba Shops</a></li>
+                <li><a>Bars</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </section>
+      <section class="main">
+        <div class="column is-3">
+          <input type="text" placeholder="Enter your city" id="city" class="has-text-success-dark input mb-2"></input>
+          <button id="searchCity" class="button is-success is-light is-fullwidth is-focused mb-3">Search...</button>
+          <div class="container is-responsive">
+          <div id="maps"></div>
+        </div>
+        </div>
+      </section>
+      <div id="places-list"></div>
+    <script src="/maps/restaurantmap.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly"async></script>
+  </body>
+</html>
