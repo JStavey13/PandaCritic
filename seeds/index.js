@@ -1,6 +1,6 @@
 const sequelize = require('../config/connection');
 const Food = require('../models/Food');
-const foodData = require('./dish-seeds.json');
+const foodData = require('./food-seeds.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
