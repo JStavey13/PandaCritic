@@ -1,10 +1,12 @@
-let maps;
+// 
 
-function getLocations(searchedCity) {
-  if (searchedCity) {
+let map;
+
+function getLocation(city) {
+  if (city) {
     //use the geo to get the lat and Long
     fetch(
-      `https://maps.googleapis.com/maps/api/geocode/json?address=${searchedCity}do&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`,
+      `https://maps.googleapis.com/maps/api/geocode/json?address=${city}do&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`,
       {
         method: "GET",
         dataType: "jsonp",
@@ -12,9 +14,9 @@ function getLocations(searchedCity) {
       }
     )
       .then((response) => response.json())
-      .then((searchedCity) => {
-        let lat = searchedCity.results[0].geometry.location.lat;
-        let long = searchedCity.results[0].geometry.location.lng;
+      .then((city) => {
+        let lat = city.results[0].geometry.location.lat;
+        let long = city.results[0].geometry.location.lng;
 
         // pass the Lat and Long to google place API
         googleMap(lat, long);
@@ -23,7 +25,7 @@ function getLocations(searchedCity) {
   }
 }
 
-function showPositions(position) {
+function getPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
 
@@ -32,43 +34,38 @@ function showPositions(position) {
 }
 
 function googleMap(lat, long) {
-  maps = new google.maps.Map(document.getElementById("maps"), {
+  map = new google.maps.Map(document.getElementById("maps"), {
     center: { lat: lat, lng: long },
     zoom: 10,
-  });
-  const marker = new google.maps.Marker({
-    position: { lat: lat, lng: long },
-    map: maps,
   });
 }
 
 const getTea = (lat, long) => {
-  // let mapsUrl = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=tea&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
-  let mapsUrl=`  url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat}%2C${long}&radius=1500&type=restaurant&keyword=tea&key=YOUR_API_KEY',
-  `
+  let url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=tea&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
 
-  fetch(mapsUrl, {
+  fetch(url, {
     method: "GET",
-    dataType: "json",
+    dataType: "jsonp",
     headers: {},
-
   })
-    .then((response) => response.json(),  console.log(JSON.stringify(response.data)))
+    .then((response) => response.json())
     .then((data) => {
+    
       //map over this data and create markers on the map
+      console.log(data)
       data.results.forEach((place) => {
         new google.maps.Marker({
           position: place.geometry.location,
           map,
           title: place.name,
         });
+        console.log(place)
       });
     })
     .catch((err) => console.log(err));
 };
 
 document.querySelector("#searchCity").addEventListener("click", (e) => {
-  let cities = document.getElementById("cities").value;
-  console.log(cities);
-  getLocations(cities);
+  let city = document.getElementById("city").value;
+  getLocation(city);
 });

@@ -10,24 +10,81 @@
     <title>Search for Tea</title>
 </head>
   <body class="is-fullheight is-responsive has-background-warning-light">
+
+  <section class="hero is-success-light is-medium">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+      <nav class="navbar">
+        <div class="container">
+          <div class="navbar-brand">
+            <span class="navbar-burger" data-target="navbarMenuHeroA">
+              <span>Favorite Foods</span>
+              <span>Favorite boba</span>
+              <span>Favorite drinks</span>
+            </span>
+          </div>
+          <div id="navbarMenuHeroA" class="navbar-menu">
+            <div class="navbar-end">
+              <a class="navbar-item is-active">
+                Home
+              </a>
+              <a class="navbar-item">
+                Explore
+              </a>
+              <a class="navbar-item">
+                My reviews
+              </a>
+              <span class="navbar-item">
+                <a class="button is-primary is-inverted">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Download</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="title">
+          PandaCritic
+        </p>
+        <p class="subtitle">
+          My personal reviews in one place 😍
+        </p>
+      </div>
+    </div>
+  
+    <!-- Hero footer: will stick at the bottom -->
     <div class="hero-foot">
       <nav class="tabs">
-              <ul>
-                  <li class="is-active"><a>Overview</a></li>
-                  <li><a>New Place</a></li>
-                  <li><a>Your Favs</a></li>
-              </ul>
-        </nav>
-  </div>
+        <div class="container">
+          <ul>
+            <li class="is-active"><a>Overview</a></li>
+            <li><a>Restaurants</a></li>
+            <li><a>Boba Shops</a></li>
+            <li><a>Bars</a></li>
+            <li><a>Recommended</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </section>
     <section>
-      <div>
-        <input type="text" placeholder="Enter your city" id="cities" class="has-text-success-dark input mb-2"></input>
+      <div class="column is-4">
+        <input type="text" placeholder="Enter your city" id="city" class="has-text-success-dark input mb-2"></input>
         <button id="searchCity" class="button is-success is-light is-fullwidth is-focused mb-3">Search...</button>
         <div class="container is-responsive">
         <div id="maps"></div>
       </div>
       </div>
     </section>
+    
     <script src="/maps/maps.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w&libraries=places&v=weekly"async></script>
   </body>
