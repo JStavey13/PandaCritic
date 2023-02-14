@@ -49,20 +49,47 @@ const getTea = (lat, long) => {
     .then((response) => response.json())
     .then((data) => {
     
-      //map over this data and create markers on the map
-      console.log(data)
+      //Create markers on the map
       data.results.forEach((place) => {
         new google.maps.Marker({
           position: place.geometry.location,
           map,
           title: place.name,
         });
-        console.log(place)
       });
+      addToList(data);
     })
     .catch((err) => console.log(err));
 };
+function addToList(data){
+  data.results.forEach((place)=>{
+console.log(`
+${place.name}
+${place.rating}
+${place.photos[0].photo_reference}
+${place.types[0]}
+${place.vicinity}
+`)
+const card = document.createElement(`div`);
+const imgEl = document.createElement(`img`);
+const heading = document.createElement(`h2`);
+const ratingEl = document.createElement(`p`);
+const hr = document.createElement(`hr`);
+const address = document.createElement(`p`);
+const placesDiv = document.querySelector(`#places-list`);
+placesDiv.appendChild(card);
+imgEl.src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place.photos[0].photo_reference}&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w` ;
+placesDiv.appendChild(imgEl);
+heading.textContent = place.name;
+placesDiv.appendChild(heading);
+ratingEl.textContent = place.rating;
+placesDiv.appendChild(ratingEl);
+address.textContent = place.vicinity;
+placesDiv.append(address);
+placesDiv.appendChild(hr);
 
+  })
+}
 document.querySelector("#searchCity").addEventListener("click", (e) => {
   let city = document.getElementById("city").value;
   getLocation(city);
