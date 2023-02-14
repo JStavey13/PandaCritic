@@ -1,3 +1,11 @@
 const User = require('./User');
 const Food = require('./Food');
-module.exports = { User, Food };
+
+
+
+Food.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+  });
+
+  module.exports = { User, Food };

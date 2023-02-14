@@ -1,6 +1,26 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+router.post('/', (req, res) => {
+  // Use Sequelize's `create()` method to add a row to the table
+  // Similar to `INSERT INTO` in plain SQL
+  User.create({
+    name: req.body.name,
+    email: req.body.email,
+    password: req.body.password,
+
+
+  })
+    .then((newUser) => {
+      // Send the newly created row as a JSON object
+      res.json(newUser);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+
 router.post('/login', async (req, res) => {
   try {
     // TODO: Add a comment describing the functionality of this expression

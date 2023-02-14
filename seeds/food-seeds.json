@@ -1,0 +1,38 @@
+[
+  {
+    "food_name": "Grilled Cheese",
+    "food_description": "melty cheese between grilled pieces of bread",
+    "restaurant_name": "Ian's pub",
+    "food_rating": 4
+  },
+
+  {
+    "food_name": "Cheesecake",
+    "food_description": "New York style with graham cracker crust.",
+    "restaurant_name": "The Eatery",
+    "food_rating": 5
+  },
+  
+  {
+    "food_name": "Pineapple pizza",
+    "food_description": "Hawaiian pizza with ham and pineapple",
+    "restaurant_name": "Strombolli's Italian extravaganza",
+    "food_rating": 3
+  },
+
+  {
+    "food_name": "Chili",
+    "food_description": "Extra spicy and without beans",
+    "restaurant_name": "Truck Stop 44",
+    "food_rating": 3
+  },
+
+  {
+    "food_name": "Taco Truck",
+    "food_description": "36 taco party platter, wheeled in on a cart",
+    "restaurant_name": "Rio Dio",
+    "food_rating": 5
+  }
+]
+
+
