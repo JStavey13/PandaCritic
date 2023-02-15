@@ -7,13 +7,12 @@ p {
 }
 h2, p{
 padding-left: 2rem;
-/* display: inline-flex; */
 }
 img{
   padding: 1rem 2rem 0;
 }
 .main{
-  background-image: url(/image/photo-1548081597-c3552b4e9853.avif);
+  background-image: url(/image/sitting-panda.avif);
   background-repeat: no-repeat;
 
 }
