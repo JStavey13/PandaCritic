@@ -2,13 +2,15 @@ const router = require('express').Router();
 const Food = require('../../models/Food');
 
 router.post('/', async (req, res) => {
+  console.log(req.session.user_id)
   try {
     const foodData = await Food.create({
-      food_name: req.body.food_name,
-      food_description: req.body.food_description,
-      food_rating: req.body.food_rating,
-      restaurant_name: req.body.restaurant_name
+      food_name: req.body.foodName,
+      food_description: req.body.foodDescription,
+      restaurant_name: req.body.restaurantName,
+      user_id: req.session.user_id
     });
+    
     res.status(200).json(foodData);
   } catch (err) {
     res.status(400).json(err);
