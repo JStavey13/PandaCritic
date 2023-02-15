@@ -20,21 +20,17 @@ router.put('/:id', async (req, res) => {
 
   try {
     const food = await Food.update(
-      {
-        food_name: req.body.food_name,
-        food_description: req.body.food_description,
-        food_rating: req.body.food_rating,
-        restaurant_name: req.body.restaurant_name
-      },
+      req.body,
       {
         where: {
           id: req.params.id,
-        },
+        }
       }
     );
 
-    res.status(200).json(dish);
+    res.status(200).json(food);
   } catch (err) {
+    console.error(err)
     res.status(500).json(err);
   }
 });

@@ -28,14 +28,25 @@ router.get('/', async (req, res) => {
             res.render('food', { foods, logged_in: true });
           });
     
-          router.get('/login', (req, res) => {
+      router.get('/login', (req, res) => {
           
-            if (req.session.logged_in) {
-              res.redirect('/');
-              return;
-            }
+        if (req.session.logged_in) {
+          res.redirect('/');
+          return;
+        }
           
-            res.render('login');
+        res.render('login');
+      });
+
+      router.get('/my-reviews', withAuth, async (req, res) => {
+        const foodData = await Food.findAll().catch((err) => { 
+            res.json(err);
           });
+            const foods = foodData.map((food) => food.get({ plain: true }));
+            res.render('my-reviews', { foods, logged_in: true });
+          });
+
+
+
 
 module.exports = router

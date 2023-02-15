@@ -28,7 +28,7 @@ Food.init(
 
         food_rating: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
         },
 
         restaurant_name: {
