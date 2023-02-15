@@ -1,8 +1,7 @@
 let map;
 
-function getLocation(city) {
+function newLocation(city) {
   if (city) {
-    //use the geo to get the lat and Long
     fetch(
       `https://maps.googleapis.com/maps/api/geocode/json?address=${city}do&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`,
       {
@@ -16,7 +15,7 @@ function getLocation(city) {
         let lat = city.results[0].geometry.location.lat;
         let long = city.results[0].geometry.location.lng;
 
-        // pass the Lat and Long to google place API
+        // Send coordinates to google API 
         googleMap(lat, long);
         getTea(lat, long);
       });
@@ -61,6 +60,7 @@ const getTea = (lat, long) => {
     })
     .catch((err) => console.log(err));
 };
+// This function grabs and adds information to the site
 function addToList(data){
   data.results.forEach((place)=>{
 console.log(`
@@ -70,6 +70,7 @@ ${place.photos[0].photo_reference}
 ${place.types[0]}
 ${place.vicinity}
 `)
+// Create and append elements to display on site
 const card = document.createElement(`div`);
 const imgEl = document.createElement(`img`);
 const heading = document.createElement(`h2`);
@@ -90,8 +91,9 @@ placesDiv.appendChild(hr);
 
   })
 }
+// 
 document.querySelector("#searchCity").addEventListener("click", (e) => {
   let city = document.getElementById("city").value;
-  getLocation(city);
+  newLocation(city);
 });
 

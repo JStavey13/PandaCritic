@@ -48,7 +48,7 @@ const getTea = (lat, long) => {
     .then((response) => response.json())
     .then((data) => {
     
-      //Create markers on the map
+      //Add markers on the map
       data.results.forEach((place) => {
         new google.maps.Marker({
           position: place.geometry.location,
