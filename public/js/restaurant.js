@@ -38,7 +38,7 @@ function googleMap(lat, long) {
 }
 
 const getTea = (lat, long) => {
-  let url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=tea&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
+  let url = `https://floating-headland-95050.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=50000&type=restaurant&keyword=food&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w`;
 
   fetch(url, {
     method: "GET",
@@ -48,7 +48,7 @@ const getTea = (lat, long) => {
     .then((response) => response.json())
     .then((data) => {
     
-      //Create markers on the map
+      //Add markers on the map
       data.results.forEach((place) => {
         new google.maps.Marker({
           position: place.geometry.location,
