@@ -4,11 +4,12 @@ const foodFormHandler = async (event) => {
     const foodName = document.querySelector('#food_name').value.trim();
     const foodDescription = document.querySelector('#food_description').value.trim();
     const restaurantName = document.querySelector('#restaurant_name').value.trim();
+    const foodRating = document.querySelector('#food_rating').value.trim();
   
-    if (foodName || foodDescription || restaurantName) {
+    if (foodName || foodDescription || restaurantName || foodRating) {
       const response = await fetch('/api/foods', {
         method: 'POST',
-        body: JSON.stringify({ foodName, foodDescription, restaurantName }),
+        body: JSON.stringify({ foodName, foodDescription, restaurantName, foodRating }),
         headers: { 'Content-Type': 'application/json' },
       });
   
