@@ -4,18 +4,24 @@
       Add a new food review!
     </h2>
   </div>
-  {{#each foods as |food|}}
+  {{#each foods as |food| }}
   <div class="food col-md-4">
     <p>
       {{food.id}}.
       {{food.food_name}}
     </p>
+    <p>
+      {{food.food_description}}
+    </p>
+    <p>
+      {{restaurant_name}}
+    </p>
+    <p>
+      {{food.food_rating}}
+    </p>
   </div>
   <div class="col-md-5">
-    <p>
-      Food:
-      {{food.food_name}}
-    </p>
+
   </div>
   
   {{/each}}
@@ -45,6 +51,14 @@
       <br />
       <textarea id="restaurant_name" name="restaurant_name" rows="2" cols="30">
       {{restaurant_name}}
+    </textarea>
+    <br />
+      <label for="food_rating">
+        Rating:
+      </label>
+      <br />
+      <textarea id="food_rating" name="food_rating" rows="2" cols="30">
+      {{food_rating}}
     </textarea>
       <br />
       <br />

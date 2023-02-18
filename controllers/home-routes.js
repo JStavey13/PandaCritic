@@ -43,6 +43,7 @@ router.get('/', async (req, res) => {
             res.json(err);
           });
             const foods = foodData.map((food) => food.get({ plain: true }));
+            console.log(foods)
             res.render('my-reviews', { foods, logged_in: true });
           });
 

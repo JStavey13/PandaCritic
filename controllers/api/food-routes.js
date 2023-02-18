@@ -8,6 +8,7 @@ router.post('/', async (req, res) => {
       food_name: req.body.foodName,
       food_description: req.body.foodDescription,
       restaurant_name: req.body.restaurantName,
+      food_rating: req.body.foodRating,
       user_id: req.session.user_id
     });
     
