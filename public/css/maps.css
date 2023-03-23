@@ -26,3 +26,13 @@ img{
     width: 500px;
     border-radius: 8px;
   }
+
+.login {
+  font-size: 33px;
+  height: 66px;
+}
+
+.signup {
+  font-size: 33px;
+  height: 66px;
+}
