@@ -28,6 +28,11 @@ img{
   }
 
 .login {
-  font-size: 55px;
+  font-size: 33px;
+  height: 66px;
+}
+
+.signup {
+  font-size: 33px;
   height: 66px;
 }
