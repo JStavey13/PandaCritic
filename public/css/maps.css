@@ -26,3 +26,8 @@ img{
     width: 500px;
     border-radius: 8px;
   }
+
+.login {
+  font-size: 55px;
+  height: 66px;
+}
