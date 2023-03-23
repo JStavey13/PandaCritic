@@ -1,5 +1,5 @@
 let map;
-
+//Get the lat and Long
 function newLocation(city) {
   if (city) {
     fetch(
@@ -91,7 +91,7 @@ placesDiv.appendChild(hr);
 
   })
 }
-// 
+// search city input
 document.querySelector("#searchCity").addEventListener("click", (e) => {
   let city = document.getElementById("city").value;
   newLocation(city);
