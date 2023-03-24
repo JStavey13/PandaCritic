@@ -1,42 +1,92 @@
-<div class="row">
-  <div class="col-md-6">
-    <h2 class="login">Login</h2>
 
-    <form class="form login-form box">
-      <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+<section class="is-fullheight">
+  <div class="container">
+    <div class="columns is-5-tablet is-4-desktop is-3-widescreen">
+      <div class="column is-half">
+        <h2 class="signup">Login</h2>
+        <form action="" class="login-form box">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" id="email-login"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" id="password-login"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <label for="" class="checkbox">
+              <input type="checkbox" />
+              Remember me
+            </label>
+          </div>
+          <div class="field">
+            <button class="button is-success">
+              Login
+            </button>
+          </div>
+        </form>
       </div>
-      <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">login</button>
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
-    <h2 class="signup">Signup</h2>
 
-    <form class="form signup-form box">
-      <div class="form-group">
-        <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        {{! Signup code }}
+        <div class="column is-flex-direction-row is-half">
+        <h2 class="signup">Signup</h2>
+        <form action="" class="signup-form box">
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input
+                class="input"
+                type="text"
+                id="name-signup"
+                placeholder="Name"
+                id="name-signup"
+              />
+              <span class="icon is-small is-left">
+                <i class="fas fa-user fa-sm" style="color: #36ec97;"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left has-icons-right">
+              <input class="input" type="email" placeholder="Email" id="email-signup"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope" style="color: #36ec97;"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <p class="control has-icons-left">
+              <input class="input" type="password" placeholder="Password" id="password-signup"/>
+              <span class="icon is-small is-left">
+                <i class="fas fa-lock" style="color: #36ec97;"></i>
+              </span>
+            </p>
+          </div>
+          <div class="field">
+            <button class="button is-success">
+              Signup
+            </button>
+          </div>
+        </form>
+        </div>
       </div>
-      <div class="form-group">
-        <label for="email-signup">email:</label>
-        <input class="form-input" type="text" id="email-signup" />
-      </div>
-      <div class="form-group">
-        <label for="password-signup">password:</label>
-        <input class="form-input" type="password" id="password-signup" />
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
-      </div>
-    </form>
-  </div>
-</div>
+    </div>
+</section>
 
 <script src="./js/login.js"></script>
