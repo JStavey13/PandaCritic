@@ -46,6 +46,10 @@ router.get('/', async (req, res) => {
             console.log(foods)
             res.render('my-reviews', { foods, logged_in: true });
           });
+      
+      
+
+      
 
 
 
