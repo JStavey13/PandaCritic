@@ -72,23 +72,41 @@ ${place.vicinity}
 `)
 // Create and append elements to display on site
 const card = document.createElement(`div`);
-const imgEl = document.createElement(`img`);
-const heading = document.createElement(`h2`);
-const ratingEl = document.createElement(`p`);
-const hr = document.createElement(`hr`);
-const address = document.createElement(`p`);
+// const imgEl = document.createElement(`img`);
+// const heading = document.createElement(`h2`);
+// const ratingEl = document.createElement(`p`);
+// const hr = document.createElement(`hr`);
+// const address = document.createElement(`p`);
 const placesDiv = document.querySelector(`#places-list`);
 placesDiv.appendChild(card);
-imgEl.src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place.photos[0].photo_reference}&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w` ;
-placesDiv.appendChild(imgEl);
-heading.textContent = place.name;
-placesDiv.appendChild(heading);
-ratingEl.textContent = place.rating;
-placesDiv.appendChild(ratingEl);
-address.textContent = place.vicinity;
-placesDiv.append(address);
-placesDiv.appendChild(hr);
+// imgEl.src = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place.photos[0].photo_reference}&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w` ;
+// placesDiv.appendChild(imgEl);
+// heading.textContent = place.name;
+// placesDiv.appendChild(heading);
+// ratingEl.textContent = place.rating;
+// placesDiv.appendChild(ratingEl);
+// address.textContent = place.vicinity;
+// placesDiv.append(address);
+// placesDiv.appendChild(hr);
+ card.innerHTML=(`<div class="column list has-hoverable-list-items">
+<div class="columns list-item box">
+  <div class="list-item-image">
+    <figure class="image is-64x64">
+      <img class="is-rounded" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${place.photos[0].photo_reference}&key=AIzaSyCOYW44XORsf-nBZKXvYwZ8VPxDIgq8X7w">
+      </figure>
+    </figure>
+  </div>
 
+  <div class="list-item-content">
+    <div class="list-item-title">${place.name}</div>
+    <div class="list-item-rating">${place.rating}</div>
+    <div class="list-item-address">${place.vicinity}</div>
+  </div>
+
+  </div>
+</div>
+<br/>
+`);
   })
 }
 // search city input
