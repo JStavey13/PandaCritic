@@ -29,19 +29,10 @@
           </div>
           <div id="navbarMenuHeroA" class="navbar-menu">
             <div class="navbar-end">
-              <a href="/" class="navbar-item is-active">
-                Home
-              </a>
-{{!-- question the utility of explore --}}
-              <a class="navbar-item">
-                Explore
-              </a>
-              <a href="/my-reviews" class="navbar-item">
-                My reviews
-              </a>
+
               <!-- Conditionally render login or logout links -->
               {{#if logged_in}}
-              <a href="/food" class="navbar-item">Search Foods</a> |
+             
               <button class="no-button" id="logout">Logout</button>
               {{else}}
               <button class="no-button" id="logout">
