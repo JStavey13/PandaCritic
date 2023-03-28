@@ -1,43 +1,35 @@
-<section class="hero is-warning is-small">
-      
+    <section class="hero is-small">
+    
         <!-- Hero content: will be in the middle -->
       
-        <!-- Hero footer: will stick at the bottom -->
         <div class="hero-foot">
             <nav class="tabs">
                     <ul>
-
-                        <li><a href="/explore">Explore</a></li>
+                      <li class="is-active">My Reviews</li>
+                        <li><a href="/food" class="has-text-white">Explore</a></li>
                     </ul>
               </nav>
         </div>
 </section>
-<div class="columns is-5-tablet is-4-desktop is-3-widescreen">
-  <div class="column is-one-fifth">
-<h1>Add a new food review!</h1>  
+
+<div class="review">
+<div class="container">
+  <div class="form-container">
     <form class="new-food-form">
       <div class="field">
+        <h1  class="has-text-link-dark">Add a new food review!</h1> 
         <label for="food_name">
-        Food Name:
+        Name:
       </label>
       <div class="control">
-            <input class="input" type="text" placeholder="Food name" id="food_name" name="food_name">
+            <input class="input is-info" type="text" placeholder="Name" id="food_name" name="food_name">
  {{food_name}}
   </div>
-
-
-<div class="field">
-  <label for="food_description">Description</label>
-  <div class="control ">
-    <input class="input is-success" type="text" placeholder="Description" id="food_description" name="food_description">
- {{food_description}}
-  </div>
-</div>
 
 <div class="field">
   <label for="restaurant_name">Restaurant</label>
   <div class="control">
-    <input class="input is-success" type="text" placeholder="Restaurant name" id="restaurant_name" name="restaurant_name">
+    <input class="input is-info" type="text" placeholder="Restaurant " id="restaurant_name" name="restaurant_name">
 {{restaurant_name}}
     </input>
   </div>
@@ -45,9 +37,17 @@
 
 <div class="field">
   <label for="food_rating">Rating</label>
-  <div class="control">
-    <textarea class="textarea" placeholder="Rate this ⭐" id="food_rating" name="food_rating"></textarea>
+  <div class="control ">
+    <input class="input is-info" placeholder="How may ⭐ would you give this?" id="food_rating" name="food_rating">
     {{food_rating}}
+  </div>
+</div>
+
+<div class="field">
+  <label for="food_description">My Thoughts</label>
+  <div class="control">
+        <textarea class="textarea is-info" type="text" placeholder="Hmmm...🤔" id="food_description" name="food_description"></textarea>
+ {{food_description}}
   </div>
 </div>
 
@@ -58,34 +58,69 @@
   <div class="control">
     <button class="button is-link is-light">Cancel</button>
   </div>
+  <div class="file is-normal">
+  <label class="file-label">
+    <input class="file-input" type="file" name="picture">
+    <span class="file-cta">
+      <span class="file-icon">
+        <i class="fas fa-upload has-text-link-dark"></i>
+      </span>
+      <span class="file-label has-text-link-dark" >
+        Upload Image
+      </span>
+    </span>
+  </label>
 </div>
     </form>
   </div>
-    {{!-- put div here to display all reviews --}}
-    <div class="menu-container">
- <div class="column is-one-third">
-
+  </div>
+  <div class="media-container">
+    <!-- Add the media code here -->
+    
+     <div class="">
   {{#each foods as |food| }}
-  <div class="food col-md-4">
-    <p>
-      {{food.id}}.
-      {{food.food_name}}
+
+  <div class="">
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-124x124">
+      <img src="https://bulma.io/images/placeholders/128x128.png">
     </p>
-    <p>
-      {{food.food_description}}
-    </p>
-    <p>
-      {{food.restaurant_name}}
-    </p>
-    <p>
-      {{food.food_rating}}
-    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>{{food.restaurant_name}}</strong> <small>31m</small>
+        <br>
+        <small>I give this {{food.food_rating}} ⭐</small>
+        <br>
+        {{food.id}}
+     I got a <strong>{{food.food_name}}</strong> and thought 🤔 {{food.food_description}}
+      </p>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fas fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>  
   </div>
-    {{/each}}
+  {{!-- <div class="media-right">
+    <button class="delete"></button>
+  </div> --}}
+      </div>
+</article>
+  {{/each}}
+ </div>
+  </div>
+</div>
   </div>
 </div>
 
-  </div>
-</div>
-<script src = "./js/form.js"></script>
-
+<script src = "./js/form.js"></script> 
