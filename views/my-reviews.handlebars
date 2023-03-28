@@ -6,22 +6,66 @@
         <div class="hero-foot">
             <nav class="tabs">
                     <ul>
-                        
-                        
+
                         <li><a href="/food">Explore</a></li>
                     </ul>
               </nav>
         </div>
-      </section>
+</section>
 
 
-
-<div class="menu-container">
-  <div class="card-header col-md-12 text-center">
-    <h2>
       Add a new food review!
-    </h2>
+    </h2>   
+    <form class="new-food-form">
+      <div class="field">
+        <label for="food_name">
+        Food Name:
+      </label>
+      <div class="control">
+            <input class="input" type="text" placeholder="Food name" id="food_name" name="food_name">
+ {{food_name}}
   </div>
+
+
+<div class="field">
+  <label for="food_description">Description</label>
+  <div class="control ">
+    <input class="input is-success" type="text" placeholder="Description" id="food_description" name="food_description">
+ {{food_description}}
+  </div>
+</div>
+
+<div class="field">
+  <label for="restaurant_name">Restaurant</label>
+  <div class="control">
+    <input class="input is-success" type="text" placeholder="Restaurant name" id="restaurant_name" name="restaurant_name">
+{{restaurant_name}}
+    </input>
+  </div>
+</div>
+
+<div class="field">
+  <label for="food_rating">Rating</label>
+  <div class="control">
+    <textarea class="textarea" placeholder="Rate this ⭐" id="food_rating" name="food_rating"></textarea>
+    {{food_rating}}
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <div class="control">
+    <button class="button is-link" type="submit" value="Submit">Submit</button>
+  </div>
+  <div class="control">
+    <button class="button is-link is-light">Cancel</button>
+  </div>
+</div>
+    </form>
+  </div>
+    {{!-- put div here to display all reviews --}}
+    <div class="menu-container">
+ <div class="column is-one-third">
+
   {{#each foods as |food| }}
   <div class="food col-md-4">
     <p>
@@ -32,61 +76,16 @@
       {{food.food_description}}
     </p>
     <p>
-      {{restaurant_name}}
+      {{food.restaurant_name}}
     </p>
     <p>
       {{food.food_rating}}
     </p>
   </div>
-  <div class="col-md-5">
-
+    {{/each}}
   </div>
-  
-  {{/each}}
-  <!-- This is the form for adding a new dish -->
-  <div class="add-dish-container">
-    
-    <form class="new-food-form">
-      <label for="food_name">
-        Food Name:
-      </label>
-      <br />
-      <textarea id="food_name" name="food_name" rows="2" cols="30">
-      {{food_name}}
-    </textarea>
-      <br />
-      <label for="food_description">
-        Description:
-      </label>
-      <br />
-      <textarea id="food_description" name="food_description" rows="5" cols="30">
-      {{food_description}}
-    </textarea>
-      <br />
-      <label for="restaurant_name">
-        Restaurant Name:
-      </label>
-      <br />
-      <textarea id="restaurant_name" name="restaurant_name" rows="2" cols="30">
-      {{restaurant_name}}
-    </textarea>
-    <br />
-      <label for="food_rating">
-        Rating:
-      </label>
-      <br />
-      <textarea id="food_rating" name="food_rating" rows="2" cols="30">
-      {{food_rating}}
-    </textarea>
-      <br />
-      <br />
-      
-      <br />
-      <button type="submit" value="Submit">
-        Submit
-      </button>
-    </form>
-    {{!-- put div here to display all reviews --}}
+</div>
   </div>
 </div>
 <script src = "./js/form.js"></script>
+
