@@ -27,6 +27,22 @@ router.get('/', async (req, res) => {
             const foods = foodData.map((food) => food.get({ plain: true }));
             res.render('food', { foods, logged_in: true });
           });
+
+          router.get('/bars', withAuth, async (req, res) => {
+            const foodData = await Food.findAll().catch((err) => { 
+                res.json(err);
+              });
+                const foods = foodData.map((food) => food.get({ plain: true }));
+                res.render('bars', { foods, logged_in: true });
+              });
+
+              router.get('/restaurants', withAuth, async (req, res) => {
+                const foodData = await Food.findAll().catch((err) => { 
+                    res.json(err);
+                  });
+                    const foods = foodData.map((food) => food.get({ plain: true }));
+                    res.render('restaurants', { foods, logged_in: true });
+                  });
     
       router.get('/login', (req, res) => {
           
