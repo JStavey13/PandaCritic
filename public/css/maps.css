@@ -1,3 +1,7 @@
+h1{
+  font-size: 2rem;
+
+}
 h2 {
   font-weight: 700;
 }
@@ -5,20 +9,25 @@ p {
   font-size: 14px;
   line-height: 1.5;
 }
+
 h2, p{
 padding-left: 2rem;
 }
-img{
-  padding: 1rem 2rem 0;
+.container {
+  padding-top: 1rem;
 }
-.main{
-  background-image: url(/image/sitting-panda.avif);
-  background-repeat: no-repeat;
-
+.hero-foot{
+  background-color: #485FC7;
+  color: aliceblue;
 }
-.hero{
-  background-color: #D9F5DC;
-  /* background-image: url(/image/photo-1501082924321-2822c32a913c.avif); */
+.media {
+  width: 500px;
+  height: 200px;
+}
+.review{
+  color: #222831;
+  background-color: aliceblue;
+  padding-top: 1rem;
 }
 
 #maps {

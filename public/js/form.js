@@ -20,7 +20,12 @@ const foodFormHandler = async (event) => {
       }
     }
   };
-
+  const form = document.querySelector('.new-food-form');
+  const media = document.querySelector('.media-container');
+  
+  form.style.float = 'left';
+  media.style.flex.wrap.wrap = 'right';
+  
   document
   .querySelector('.new-food-form')
   .addEventListener('submit', foodFormHandler);
