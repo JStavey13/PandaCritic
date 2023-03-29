@@ -1,3 +1,6 @@
+body{
+  background-color: aliceblue;
+}
 h1{
   font-size: 2rem;
 
@@ -12,6 +15,9 @@ p {
 
 h2, p{
 padding-left: 2rem;
+}
+a .first-link{
+  padding-left: 3rem;
 }
 .container {
   padding-top: 1rem;
