@@ -38,7 +38,7 @@
 <div class="field">
   <label for="food_rating">Rating</label>
   <div class="control ">
-    <input class="input is-info" placeholder="How may ⭐ would you give this?" id="food_rating" name="food_rating">
+    <input class="input is-info" placeholder="How may 🐼 would you give this?" id="food_rating" name="food_rating">
     {{food_rating}}
   </div>
 </div>
@@ -90,30 +90,22 @@
   <div class="media-content">
     <div class="content">
       <p>
-        <strong>{{food.restaurant_name}}</strong> <small>31m</small>
+        <strong>{{food_name}}</strong> I rate it {{food.food_rating}}🐼 
         <br>
-        <small>I give this {{food.food_rating}} ⭐</small>
-        <br>
-        {{food.id}}
-     I got a <strong>{{food.food_name}}</strong> and thought 🤔 {{food.food_description}}
+     I got a {{food_name}} at <strong>{{food.restaurant_name}}</strong> and thought 🤔 {{food.food_description}}
       </p>
     <nav class="level is-mobile">
       <div class="level-left">
         <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-reply"></i></span>
-        </a>
-        <a class="level-item">
-          <span class="icon is-small"><i class="fas fa-retweet"></i></span>
+          <span class="icon is-small first-link"><i class="fas fa-reply"></i></span>
         </a>
         <a class="level-item">
           <span class="icon is-small"><i class="fas fa-heart"></i></span>
         </a>
+           <small>31m</small>
       </div>
     </nav>  
   </div>
-  {{!-- <div class="media-right">
-    <button class="delete"></button>
-  </div> --}}
       </div>
 </article>
   {{/each}}

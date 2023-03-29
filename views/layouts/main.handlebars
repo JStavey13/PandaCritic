@@ -13,8 +13,8 @@
 
 </head>
 
-<body class="is-fullheight is-responsive has-background-warning-light">
-  <section class="hero is-success-light is-small">
+<body class="is-fullheight is-responsive">
+  <section class="hero is-small">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
       <nav class="navbar">
@@ -32,9 +32,9 @@
               <!-- Conditionally render login or logout links -->
               {{#if logged_in}}
              
-              <button class="button is-primary is-inverted has-text-link-dark has-background-link-light" id="logout">Logout</button>
+              <button class="button is-primary is-inverted has-text-link-dark has-background-link-light mt-2" id="logout">Logout</button>
               {{else}}
-              <button class="button is-primary is-inverted has-text-link-dark has-background-link-light" id="logout">
+              <button class="button is-primary is-inverted has-text-link-dark has-background-link-light mt-2" id="logout">
                 <a href="/login">Login</a>
               </button>
               {{/if}}
