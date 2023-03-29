@@ -14,7 +14,7 @@ const foodFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/my-reviews');
+        document.location.replace('/');
       } else {
         alert(response.statusText);
       }
@@ -24,7 +24,7 @@ const foodFormHandler = async (event) => {
   const media = document.querySelector('.media-container');
   
   form.style.float = 'left';
-  media.style.flex.wrap.wrap = 'right';
+  media.style.flex.wrap = 'right';
   
   document
   .querySelector('.new-food-form')
