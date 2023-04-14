@@ -1,8 +1,6 @@
 const router = require('express').Router();
 const Food = require('../models/Food');
-const withAuth = require('../utils/auth')
-
-
+const withAuth = require('../utils/auth');
 
       router.get('/login', (req, res) => {
       
