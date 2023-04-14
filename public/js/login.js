@@ -37,7 +37,7 @@ const signupFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/food');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }

@@ -14,6 +14,17 @@ const withAuth = require('../utils/auth')
         res.render('login');
       });
 
+      router.get('/signup', async (req, res) => {
+        const foodData = await Food.findAll().catch((err) => { 
+            res.json(err);
+          });
+            const foods = foodData.map((food) => food.get({ plain: true }));
+            console.log(foods)
+            res.render('signup', { foods, logged_in: true });
+          });
+
+
+
       router.get('/food', withAuth, async (req, res) => {
         const foodData = await Food.findAll().catch((err) => { 
             res.json(err);
