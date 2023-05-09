@@ -9,7 +9,7 @@ const withAuth = require('../utils/auth');
           return;
         }
       
-        res.render('index');
+        res.render('index.html');
       });
 
       router.get('/signup', async (req, res) => {
